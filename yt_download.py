@@ -19,7 +19,7 @@ class yt_dld:
         }
         download(self.url,ydl_opts)
     
-    def video_720(self):
+    def video_720p(self):
         ydl_opts = {
             'format': 'best[ext=mp4][height<=720]',
             'outtmpl': '%(title)s_720p.%(ext)s',
