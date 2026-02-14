@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Processing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .message {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .info {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+        
+        .info p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            color: #856404;
+            font-size: 13px;
+            text-align: left;
+        }
+        
+        /* Tablet devices */
+        @media screen and (max-width: 768px) {
+            .message {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .icon {
+                font-size: 50px;
+            }
+        }
+        
+        /* Mobile devices */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .message {
+                padding: 25px 20px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .icon {
+                font-size: 45px;
+            }
+            
+            .info p {
+                font-size: 13px;
+            }
+            
+            a {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+            
+            .note {
+                font-size: 12px;
+            }
+        }
+        
+        /* Small mobile */
+        @media screen and (max-width: 360px) {
+            .message {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <div class="icon">✅</div>
+        <h1>Download Request Received!</h1>
+        <div class="info">
+            <p><span class="label">URL:</span><br>{{ url }}</p>
+            <p><span class="label">Quality:</span> {{ quality.upper() }}</p>
+        </div>
+        
+        <a href="/">Download Another Video</a>
+    </div>
+</body>
+</html>
